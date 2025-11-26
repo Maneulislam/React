@@ -2,8 +2,27 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Food from './Food'
+import Actor from './Actor'
+import Singer from './Singer'
 
 function App() {
+
+  const Actors = [
+    "Shakib Khan",
+    "Chanchal Chowdhury",
+    "Mosharraf Karim",
+    "Afran Nisho",
+    "Arifin Shuvoo"
+  ];
+
+  const Singers = [
+    { id: 1, name: "James (Nagar Baul)", age: 59 },
+    { id: 2, name: "Ayub Bachchu", age: 56 }, // (Legendary, passed away)
+    { id: 3, name: "Habib Wahid", age: 44 },
+    { id: 4, name: "Tahsan Rahman Khan", age: 44 },
+    { id: 5, name: "Imran Mahmudul", age: 33 }
+  ];
+
 
   return (
     <>
@@ -15,6 +34,19 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
+      <h1>Singers</h1>
+
+      {
+        Singers.map(singer => <Singer key={singer.id} name={singer.name} age={singer.age}></Singer>)
+      }
+
+      <h1>Actors</h1>
+
+      {
+        Actors.map(actor => <Actor name={actor}></Actor>)
+      }
+
 
       <h1>Food</h1>
 
