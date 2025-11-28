@@ -1,21 +1,57 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import Bottle from '../Bottle/Bottle';
 import './Bottles.css'
+import { addItemToCart, getCartFromLS, removeCartFromLs } from '../../utilities/localstorage';
+import Cart from '../cart/Cart';
 
 const Bottles = ({ bottlePromise }) => {
 
     const bottles = use(bottlePromise);
 
-    const [cart, setcart] = useState([]);
+    const [cart, setCart] = useState([]);
+
+
+    useEffect(() => {
+
+        const savedCartIds = getCartFromLS();
+
+        const storedCart = [];
+
+
+        for (const id of savedCartIds) {
+            const cartBottle = bottles.find(bottle => bottle.id === id);
+            if (cartBottle) {
+                storedCart.push(cartBottle);
+            }
+        }
+
+        setCart(storedCart);
+
+    }, [bottles])
+
 
     const addToCart = (bottle) => {
-        console.log("Add cart clicked", bottle);
+        const newCart = [...cart, bottle];
+        setCart(newCart);
+
+        addItemToCart(bottle.id)
+    }
+
+    const removeToCart = (id) => {
+        const remaining = cart.filter(bootle => bootle.id !== id);
+        setCart(remaining);
+
+        removeCartFromLs(id);
     }
 
 
     return (
         <div >
             <h3>Bottle: {bottles.length}</h3>
+
+            <p>Added to Cart: {cart.length}</p>
+
+            <Cart cart={cart} removeToCart={removeToCart}></Cart>
 
             <div className='bottles-container'>
                 {

@@ -9,7 +9,7 @@ const Bottle = ({ bottle, addToCart }) => {
         <div className='bottle'>
             <img src={img} alt="" />
             <h3>{name}</h3>
-            <p>${price}</p>
+            <p>$ {price}</p>
             <p>{stock} remaining</p>
             <button onClick={() => addToCart(bottle)}>Buy Now</button>
         </div>
