@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Pure Water Bottle",
+        "brand": "Aquafina",
+        "price": 30,
+        "capacity": "500ml",
+        "color": "Blue"
+    },
+    {
+        "id": 2,
+        "name": "Mineral Water Bottle",
+        "brand": "Mum",
+        "price": 20,
+        "capacity": "600ml",
+        "color": "Clear"
+    },
+    {
+        "id": 3,
+        "name": "Premium Fresh Water",
+        "brand": "Fresh",
+        "price": 25,
+        "capacity": "500ml",
+        "color": "White"
+    },
+    {
+        "id": 4,
+        "name": "Drinking Water Bottle",
+        "brand": "Pran",
+        "price": 22,
+        "capacity": "1L",
+        "color": "Green"
+    },
+    {
+        "id": 5,
+        "name": "Ultra Clear Water",
+        "brand": "Spa",
+        "price": 35,
+        "capacity": "750ml",
+        "color": "Blue"
+    }
+]
