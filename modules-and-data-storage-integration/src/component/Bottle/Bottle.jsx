@@ -1,13 +1,17 @@
-import React, { use } from 'react';
+import React from 'react';
+import './Bottle.css'
 
-const Bottle = ({ bottlePromise }) => {
+const Bottle = ({ bottle, addToCart }) => {
 
-    const bottle = use(bottlePromise);
-    console.log(bottle);
+    const { img, name, price, stock } = bottle;
 
     return (
-        <div>
-
+        <div className='bottle'>
+            <img src={img} alt="" />
+            <h3>{name}</h3>
+            <p>${price}</p>
+            <p>{stock} remaining</p>
+            <button onClick={() => addToCart(bottle)}>Buy Now</button>
         </div>
     );
 };

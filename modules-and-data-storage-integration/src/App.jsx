@@ -1,7 +1,7 @@
 
 import { Suspense } from 'react';
 import './App.css'
-import Bottle from './component/Bottle/Bottle';
+import Bottle from './component/Bottles/Bottles';
 
 function App() {
 
